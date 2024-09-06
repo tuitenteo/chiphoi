@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trịnh Bảo Ngọc</title>
+    <link rel="stylesheet" href="css/TrinhBaoNgoc.css">
+    <link rel="icon" type="image/x-icon" href="https://ih1.redbubble.net/image.1957465270.3671/flat,750x,075,f-pad,750x1000,f8f8f8.jpg">
+</head>
+
+<body>
+    <div class="im">
+        <a href="https://i.imgur.com/hWqRW3W.jpeg" target="_blank">
+            <img src="https://i.imgur.com/hWqRW3W.jpeg" alt="2 chúng mình">
+        </a>
+        <p><b>Click vào hình ảnh nếu em muốn lưu, nhưng mà nó bị bể lắm...</b></p>
+    </div>
+    <div class="login-container">
+        <h2><b> Đăng Nhập </b></h2>
+        <form id="loginform">
+            <div class="login-group">
+                <label for="pwd">Nhập mật khẩu em nhé: </label>
+                <input type="password" id="pwd" name="pwd" required>
+            </div>
+            <button type="submit"><b>Bấm vào đây nè</b></button>
+        </form>
+    </div>
+    <script>
+        function checkPass(event) {
+            event.preventDefault();
+            var password = document.getElementById('pwd').value;
+            if (password === '030583') {
+                alert('Vợ Iu Đăng Nhập Thành Cônggggggg');
+                window.location.href = 'one.html';
+            } else {
+                alert('Em không nhớ mật khẩu hãaaaaa');
+            }
+        }
+
+        document.getElementById('loginform').addEventListener('submit', checkPass);
+    </script>
+</body>
+</html>

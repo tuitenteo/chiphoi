@@ -1,0 +1,148 @@
+body {
+    background-color: rgb(255, 255, 255);
+    background-image: radial-gradient(circle, #ff9a9e, #fad0c4); /* Gradient màu sắc retro */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive; /* Phông chữ retro */
+    text-align: center;
+}
+
+p {
+    text-align: left;
+    margin-right: -80%;
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+.im {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 1; /* Đặt z-index thấp hơn */
+}
+
+.im img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 15px; /* Bo góc hình ảnh cho phong cách retro */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Đổ bóng cho hình ảnh */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển tiếp */
+    margin-bottom: 20px;
+}
+
+img:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Tăng độ đổ bóng khi hover */
+}
+
+a {
+    text-decoration: none;
+    color: #ff6b6b; /* Màu liên kết nổi bật */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+h2 {
+    margin-right: 0;
+    color: #f0e6f6;
+    text-shadow: 3px 3px 6px #0b1996;
+}
+
+.login-container {
+    position: fixed; /* Thay đổi từ absolute sang fixed */
+    top: 10%;
+    right: 5%;
+    background-color: rgba(3, 14, 20, 0.8); /* Đổi màu nền với độ trong suốt */
+    padding: 30px;
+    border-radius: 15px; /* Bo góc cho hộp đăng nhập */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Đổ bóng nổi bật */
+    width: 350px;
+    z-index: 2; /* Đặt z-index cao hơn */
+    border: 2px solid #ff6b6b; /* Đường viền màu nổi bật */
+}
+
+label {
+    color: #fffbf5; /* Màu chữ sáng hơn */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #f1c40f; /* Đường viền màu vàng */
+    border-radius: 8px;
+    margin-left: 0;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff6b6b; /* Màu nền nút retro */
+    color: #fff; /* Màu chữ trắng */
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    text-transform: uppercase; /* Chữ in hoa cho nút */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái */
+}
+
+button:hover {
+    background-color: #d64545; /* Màu nền khi hover */
+}
+
+/* Media query cho màn hình nhỏ (điện thoại) */
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .login-container {
+        width: 90%; /* Điều chỉnh chiều rộng cho phù hợp với điện thoại */
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .im img {
+        max-width: 100%; /* Hình ảnh co giãn theo kích thước màn hình */
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+}

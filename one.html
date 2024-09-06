@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chữa Lành và iu Em</title>
+    <link rel="icon" type="image/x-icon" href="https://ih1.redbubble.net/image.1957465270.3671/flat,750x,075,f-pad,750x1000,f8f8f8.jpg">
+    <link rel="html" href="./two.html">
+    <style>
+body {
+    font-family: 'Courier New', monospace; /* Phông chữ retro */
+    text-align: center;
+    background-color: #2b2b2b; /* Màu nền tối */
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0;
+    background-image: linear-gradient(45deg, #4e4e4e, #3b3b3b, #2b2b2b);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #1a1a1a;
+}
+
+p {
+    margin: 0;
+    color: #bcbcbc;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px #1a1a1a;
+}
+
+b.color {
+    color: #ff6f61; /* Tông màu dễ thương */
+}
+
+b.no-wrap, li.no-wrap {
+    white-space: nowrap;
+    color: #ff6f61;
+    text-shadow: 2px 2px 4px #1a1a1a;
+}
+
+iframe {
+    margin: 20px auto;
+    border: 2px solid #ece9e9; /* Đường viền dễ thương */
+    border-radius: 10px;
+    display: block;
+    max-width: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.room-four {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.text-container-four {
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: left;
+    max-width: 700px;
+    margin-bottom: 20px;
+    background: rgba(43, 43, 43, 0.85);
+    border-radius: 10px;
+    border: 1px solid #4e4e4e;
+}
+
+.text-content ul, .text-content-two ul {
+    color: #ff6f61;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.text-content li, .text-content-two li {
+    margin: 0;
+    padding-left: 20px;
+    text-indent: -20px;
+}
+
+.text {
+    color: #e0e0e0;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(43, 43, 43, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #4e4e4e;
+}
+
+.text ul {
+    padding-left: 0;
+    list-style-position: inside;
+    text-align: left;
+}
+
+.text li {
+    margin: 0;
+    padding-left: 20px;
+    text-indent: -20px;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(235, 233, 233, 0.8); /* Hiệu ứng dễ thương */
+}
+
+h3 {
+    color: #ffb7b2; /* Màu sắc nhẹ nhàng */
+    text-shadow: 1px 1px 3px #333;
+}
+
+.text p {
+    color: #e0e0e0;
+    padding: 5px;
+}
+
+.text a {
+    color: #ff6f61;
+    transition: color 0.3s ease;
+}
+
+.text a:hover {
+    color: #ffb7b2;
+    text-decoration: none;
+}
+
+a{
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+b.dd {
+    font-size: 20px;
+    color: #e0e0e0;
+    position: relative;
+    bottom: -10px;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: 1px solid #666;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ffb7b2;
+    transform: translateY(-2px);
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #4e4e4e;
+    font-size: 1em;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #ffb7b2;
+    outline: none;
+}
+
+.input-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -500px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#date {
+    margin-top: 10px;
+}
+
+.food-options {
+    position: absolute;
+    background-color: #3b3b3b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Courier New', monospace;
+    position: absolute;
+    display: block;
+    left: 50px;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    border: 1px solid #4e4e4e;
+}
+
+.food-options p {
+    font-weight: bold;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #1a1a1a;
+}
+
+.food-options label {
+    display: block;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #666;
+    border-radius: 10px;
+    background-color: #4e4e4e;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.food-options label:hover {
+    background-color: #555;
+    border-color: #f0ebeb;
+    transform: translateX(5px);
+}
+
+.food-options input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #ffb7b2;
+}
+
+.submit-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border: 1px solid #666;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #ffb7b2;
+    transform: translateY(-2px);
+}
+
+.food-info {
+    position: absolute;
+    left: calc(60% + 10px); /* Di chuyển sang trái 20px */
+    top: 440%; /* Vị trí hiện tại */
+    background-color: #3b3b3b;
+    padding: 10px; /* Tăng padding một chút để tạo không gian bên trong */
+    margin: 0;
+    border-radius: 15px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: none;
+    width: 30%; /* Cùng chiều rộng với food-options */
+    height: 50%;
+    overflow-y: auto;
+    line-height: 1.2; /* Giảm khoảng cách giữa các dòng */
+}
+
+.food-info p {
+    color: #e0e0e0;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #1a1a1a;
+}
+
+.food-options b{
+    color: #da5454;
+    text-shadow: 1px 1px 2px #067910;
+}
+/* Điều chỉnh kích thước cho màn hình nhỏ */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .container, .room-four, .text, .food-options, .food-info {
+        width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-container {
+        grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột thay vì 3 */
+        gap: 10px;
+    }
+
+    .image-container img {
+        height: auto; /* Điều chỉnh để ảnh co giãn theo tỷ lệ */
+    }
+
+    button {
+        width: 100%; /* Nút chiếm toàn bộ chiều rộng trên mobile */
+        padding: 10px;
+    }
+
+    .input-text {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0; /* Đặt lại vị trí cho điện thoại */
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .food-info {
+        left: 0; /* Đặt lại vị trí cho phù hợp với mobile */
+        width: 90%; /* Chiều rộng phù hợp cho điện thoại */
+        height: auto;
+    }
+
+    .food-options, .food-info {
+        max-width: 100%;
+    }
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+    </style>
+</head>
+<body>
+    <h1><b>Chào Mừng Em Đến Với Kế Hoạch Của Tui</b></h1>
+    <p><b>Đây là bản tóm tắt dự tính của anh nhé</b></p>
+    <iframe src="PLAN TABLE FOR chữa lành .pdf" width="60%" height="800px"></iframe>
+    <div class="text">
+        <h2><b>HOME</b></h2>
+        <p><b>Dayladau</b> <b class="color">Bà Triệu, Quận 5</b></p>
+        <p>Vì lịch trình thay đổi gấp nên anh quay xe cũng hơi kịp, có gì không đúng ý trong suốt buổi, mong em góp í với <a href="https://www.facebook.com/profile.php?id=100028209849193&mibextid=ZbWKwL" target="_blank">anh zai này</a> nhé</p>
+    </div>
+    <div class="container">
+        
+        <div class="room-four">
+            <div class="text-container-four">
+                <h3><b>Vì là home này ít hình ảnh hoặc tụi mình đã xem qua cùng nhau rồi, nhưng anh vẫn sẽ đưa lên tượng trưng cho em thấy he</b></h3>
+                <p><b>101. Studio</b></p>
+                <ul>
+                    <li>Có bồn tắm (cũng oke)</li>
+                    <li>Có bếp</li>
+                    <li>Vibe rừng núi, cây cối</li>
+                    <li>Có máy chiếu</li>
+                    <li>Trong hình thì thấy rộng</li>
+                    <li>Rèm chuẩn</li>
+                    <li>Nhìn chung thì thấy oke</li>
+                </ul>
+                </div>
+                <div class="image-container">
+                    <img src="./img/101.studio/s1.jpg" alt="studio1">
+                    <img src="./img/101.studio/s2.jpg" alt="studio1">
+                    <img src="./img/101.studio/s3.jpg" alt="studio1">
+                    <img src="./img/101.studio/s4.jpg" alt="studio1">
+                    <img src="./img/101.studio/s5.jpg" alt="studio1">
+                    <img src="./img/101.studio/s6.jpg" alt="studio1">
+                    <img src="./img/101.studio/s7.jpg" alt="studio1">
+                    <img src="./img/101.studio/s8.jpg" alt="studio1">
+                    <img src="./img/101.studio/s9.jpg" alt="studio1">
+                    
+                </div>
+            
+        </div>
+        <div class="input-text">
+            
+            <div class="food-options" id="food-options" >
+                <p><b class="bold">Lưu ý:</b> Em đừng click nhiều món 1 lúc để đọc địa chỉ nhá, click từng món đọc cho dễ nhìn em nhá, sau đó chọn thì em có thể chọn nhiều</p><br>
+                <p>Anh có các món gợi ý sau đây:</p><br>
+                <label><input type="checkbox" name="food" value="Tacos - Hamburger"> Tacos - Hamburger</label><br>
+                <label><input type="checkbox" name="food" value="Mì">Mì - Mì Nhật trộn</label><br>
+                <label><input type="checkbox" name="food" value="Bánh Mì Chảo"> Bánh mì chảo</label><br>
+                <label><input type="checkbox" name="food" value="Gà"> Gà viên</label><br>
+                <label><input type="checkbox" name="food" value="Jolibee"> Jolibee</label><br>
+                <label><input type="checkbox" name="food" value="Ốc"> Ốc</label><br>
+                <label><input type="checkbox" name="food" value="luxury">Hay mình đi ăn hơi sang 1 bữa</label><br>
+                <label><input type="checkbox" name="food" value="Ăn khác và ăn vặt"> Các món ăn và ăn vặt khác</label><br>
+                <button type="button" class="submit-button" id="submit-food-options">Vì 1 số lỗi nên em hãy contact <a href="https://www.facebook.com/profile.php?id=100028209849193&mibextid=ZbWKwL" target="_blank" style="color: #067910;">anh zai này</a>để chọn món </button>
+            </div>
+            <div class="food-info" id="food-info"></div>
+        </div>
+    
+        <script>
+
+
+document.getElementById('submit-food-options').addEventListener('click', function() {
+            const selectedFoods = [];
+            document.querySelectorAll('input[name="food"]:checked').forEach(function(checkbox) {
+                selectedFoods.push(checkbox.value);
+            });
+
+            if (selectedFoods.length === 0) {
+                alert('ròi em bấm ok đi');
+                return;
+            }
+
+            // Gửi dữ liệu đến máy chủ
+            fetch('http://localhost:3198/save-food-options', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ foods: selectedFoods })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Ròi anh đã ghi chú lại món ăn ròi nhé');
+
+                    
+                } else {
+                    alert('Có lỗi xảy ra khi ghi chú món ăn.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Đã xảy ra lỗi khi lưu thông tin món ăn.');
+            });
+        });
+
+     document.addEventListener('DOMContentLoaded', function() {
+    // Đảm bảo food-info ẩn theo mặc định
+    const foodInfo = document.getElementById('food-info');
+    foodInfo.style.display = 'none';
+
+    // Thay đổi event listener để hiển thị food-info khi ít nhất một checkbox được chọn
+    document.querySelectorAll('input[name="food"]').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const anyChecked = document.querySelectorAll('input[name="food"]:checked').length > 0;
+            
+            // Hiển thị hoặc ẩn food-info dựa trên trạng thái checkbox
+            foodInfo.style.display = anyChecked ? 'block' : 'none';
+
+            // Xử lý thông tin chi tiết của món ăn
+            let infoHtml = '';
+            document.querySelectorAll('input[name="food"]:checked').forEach(function(checkbox) {
+                const food = checkbox.value;
+                let addresses = [];
+                switch (food) {
+                    case 'Tacos - Hamburger':
+                        
+                        addresses.push('105 Trần Văn Đang, q3 (cùng cơ sở ở Đồng Đen)10h - 22h');
+                        addresses.push('10 Hoa Huệ, q.Phú Nhuận (có chỗ ngồi) 12h - 21h');
+                        addresses.push('60 Trần Khắc Chân (Hey Pelo nhá)10h30 - 22h30');
+                        addresses.push('Trường Sa 12h - 22h');
+                        break;
+                    case 'Mì':
+                        
+                        addresses.push('Tiệm Mì ở Bình Thạnh nhóe (tiệm này nghe đồn 1-2h sáng lận)');
+                        addresses.push('Mì Nhật nhá 10H Trần Hữu Trang, p11, Phú Nhuận (ổn nha) 11h - 22h');
+                        break;
+                    case 'Bánh Mì Chảo':
+                        addresses.push('47/24/33 Bùi Đình Túy, Bình Thạnh (ổn nha) 18h - 22h');
+                        break;
+                    case 'Gà':
+                       
+                        addresses.push('91 Lê Văn Duyệt, Bình Thạnh (k có chỗ ngồi nhé) ');
+                        break;
+                    case 'Jolibee':
+                       
+                        addresses.push('Jolibee Trường Chinh 9h - 21h');
+                        addresses.push('Jolibee Nguyễn Gia Trí 9h - 21h');
+                        addresses.push('Jolibee Tân Hương 9h - 21h');
+                        break;
+                    case 'Ốc':
+                        
+                        addresses.push('Ốc Hẻm 435/8, Gò Vấp');
+                        addresses.push('Ốc Di Toan 69/171 Nguyên Gia Trí, Bình Thạnh 22h');
+                        addresses.push('Ốc Ben 35 Vạn Kiếp, Bình Thạnh (ổn nhaa)');
+                        break;
+                    case 'luxury':
+                        
+                        addresses.push('Truyền Thuyết ChamPong 93 Phạm Văn Nghi, q7 or Tân Bình 22h30');
+                        addresses.push('Chamie Steak 58/3 Phạm Ngọc Thạch, q3 22h');
+                        addresses.push('Còn chỗ nào thì em rcm đi nhé');
+                        break;
+                    case 'Ăn khác và ăn vặt':
+                        
+                        addresses.push('Thiên Đường Ăn Vặt 164 đường 20, Gò Vấp (núp hẻm nhé) - 22h30 đóng cửa');
+                        addresses.push('Bún đậu mắm tôm nhá, gần nhà em 21h hoặc gần nhà anh Mở cả ngày');
+                        addresses.push('Hẻm 197 Ngô Quyền, q10 Hẻm nướng hay Phá lấu gì á 22h');
+                        addresses.push('Lyns Chicken 69 Tân Trang, Tân Bình (quán đồ hàn ăn vặt okee á) mà 21h30');
+                        break;
+                }
+
+                const addressHtml = addresses.map(function(address) {
+                    return `<p>${food}: ${address}</p>`;
+                }).join('');
+                infoHtml += addressHtml;
+            });
+            // Thêm liên kết đến homestay Peanut
+             infoHtml += '<p><b>Khi nào chọn món xong:</b> <a href="two.html">Em bấm vào đây nha</a></p>';
+
+            
+            foodInfo.innerHTML = infoHtml;
+        });
+
+    });
+});
+
+        </script>
+</body>
+</html>

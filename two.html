@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chữa Lành và iu Em</title>
+    <link rel="icon" type="image/x-icon" href="https://ih1.redbubble.net/image.1957465270.3671/flat,750x,075,f-pad,750x1000,f8f8f8.jpg">
+    <style>
+        /* Retro CSS Styles */
+        body {
+            background-color: #ffcc66;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Keyframes for animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 8px #fff,
+                    0 0 12px #ff4444,
+                    0 0 16px #ff4444,
+                    0 0 20px #ffa500,
+                    0 0 24px #ffa500,
+                    0 0 28px #ffa500;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
+        /* Style and animate text */
+        h1 {
+            color: #ff4444;
+            font-size: 36px;
+            margin-top: 50px;
+            text-shadow: 2px 2px #ffa500;
+            animation: bounce 2s infinite;
+        }
+
+        h2 {
+            color: #666;
+            font-size: 24px;
+            text-shadow: 1px 1px #ccc;
+            margin-top: 20px;
+            animation: flicker 3s infinite;
+        }
+
+        .first-container {
+            background-color: #ffebcd;
+            padding: 30px;
+            border: 2px solid #333;
+            border-radius: 15px;
+            box-shadow: 4px 4px 0px #666;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: left;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @media print {
+    .no-print {
+        display: none; /* Ẩn các phần tử không cần thiết khi in */
+    }
+}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+
+        /* Retro Button style */
+        .retro-button {
+            background-color: #ff4444;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 1px 1px #000;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .retro-button:hover {
+            background-color: #ffa500;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        /* Form Styles */
+        .certificate-form {
+            margin-top: 20px;
+        }
+
+        .certificate-form input {
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+
+        .signature-container {
+            border: 2px dashed #333;
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        /* Certificate Styles */
+        .certificate-display {
+            display: none; /* Hide certificate initially */
+            position: relative;
+            background-color: rgb(255, 191, 168);
+            background-size: cover;
+            width: 800px;
+            height: 970px;
+            margin: 40px auto 20px auto; /* Adjust the top margin to move down */
+            border: 2px solid #333;
+            box-shadow: 4px 4px 0px #666;
+            padding-top: 20px; /* Adjust top padding to move content up */
+        }
+
+        .certificate-display h2 {
+            color: #1a1919;
+            font-size: 14px;
+            position: absolute; /* Sử dụng position absolute để di chuyển nó ra khỏi vị trí thông thường */
+            top: -77px; /* Di chuyển nó lên phía trên khung chứa */
+            left: -0%; /* Di chuyển nó sang trái ra khỏi khung chứa */
+            margin-right: 50%;
+            padding-top: 40px;
+            margin-top: 10px;
+        }
+
+
+        .typed-signature {
+            position: absolute;
+            bottom: 100px; /* Adjust the vertical position based on your certificate design */
+            right: 520px;   /* Move to the left side */
+            font-size: 24px;
+            color: #333;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .Marriage h1{
+            color: #ff4444;
+            font-size: 36px;
+            text-shadow: none; /* Remove text-shadow if not needed */
+            animation: none; /* Disable animation */
+            padding-top: 40px;
+            margin-top: 10px;
+        }
+
+        .certificate-details {
+            display: flex;
+            gap: 20px; /* Adds space between the two columns */
+            margin-left: 36px;
+            width: 110%;
+        }
+
+        .certificate-details > div {
+            width: 50%; /* Distributes equal width to both columns */
+        }
+
+        .certificate-details label {
+            font-size: 16px;
+            font-weight: bold;
+            width: 150px; /* Fixed width for labels */
+            text-align: left; /* Aligns text within the label to the left */
+            margin: 10px 0; /* Vertical margin for spacing */
+        }
+
+        .certificate-details .input-row {
+            display: flex; /* Flex container to align label and input horizontally */
+            align-items: center; /* Aligns input and label vertically in the center */
+            margin-bottom: 10px; /* Adds space below each row */
+            justify-content: flex-start; /* Aligns contents of each row to the left */
+        }
+
+        .certificate-details input {
+            font-size: 16px; /* Matches the label font size */
+            font-weight: bold;
+            border: none; /* Removes the input border */
+            background: none; /* Removes the input background */
+            outline: none; /* Removes the focus outline */
+            padding: 0; /* Removes any padding */
+            color: #000; /* Sets the input text color */
+            flex-grow: 1; /* Allows input to take up remaining space */
+            margin-left: 10px; /* Adds some space between label and input */
+        }
+
+        .year {
+            margin-top: 8%;
+        }
+
+        .year input {
+            font-weight: bold;
+            border: none;
+            background: none;
+        }
+
+        .year label {
+            font-size: 16px;
+            font-weight: bold;
+            width: 150px;
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .sign {
+            position: relative; /* Thay đổi cách định vị */
+            left: -150px; /* Di chuyển toàn bộ phần tử sang trái 10px */
+            margin-top: 50px;
+        }
+
+        .sign label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sign p {
+            font-size: 12px; /* Giảm kích thước chữ của p */
+            margin: 0; /* Xóa khoảng cách trên và dưới p nếu cần */
+        }
+
+        .sign input {
+            font-weight: bold;
+            border: none;
+            background: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .sign-two {
+            position: relative; /* Thay đổi cách định vị */
+            left: 200px; /* Di chuyển toàn bộ phần tử sang trái 150px */
+            top: -95px; /* Di chuyển toàn bộ phần tử lên trên 20px, điều chỉnh giá trị theo nhu cầu */
+            margin-bottom: 60%;
+        }
+
+        .sign-two label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sign-two p {
+            font-size: 12px; /* Giảm kích thước chữ của p */
+            margin: 0; /* Xóa khoảng cách trên và dưới p nếu cần */
+        }
+
+        .sign-two input {
+            font-weight: bold;
+            border: none;
+            background: none;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .nhan p {
+            position: relative;
+            bottom: 900%; /* Move text up */
+            margin-bottom: 20px; /* Adjust bottom margin */
+        }
+
+        .Marriage img:hover {
+            transform: scale(1.2); /* Phóng to hình ảnh khi di chuột qua */
+        }
+
+        .button-sign {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -60%;
+        }
+
+        .button-sign label{
+            font-weight: bold;
+        }
+
+        .button-sign button{
+            padding: 5px;
+            margin-bottom:50px;
+        }
+
+
+        .button-sign .text {
+            margin-top: 20px; /* Thêm khoảng cách giữa phần chữ ký và đoạn văn bản */
+        }
+
+        .button-sign input {
+            margin-top: 10px; /* Thêm khoảng cách giữa nhãn và trường nhập */
+            border-radius: 20px;
+            padding:10px;
+        }
+
+        .husband-signature {
+            
+            
+            text-align: center; /* Center-align text */
+            padding-top: 5px; /* Adjust padding to align with text */
+            margin-top: 30px; /* Space above the signature */
+            bottom: 25px;
+            position: absolute;
+            right: 370px;
+            font-size: 24px;
+            color: #333;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .retro-button-two.no-print {
+            position: absolute;
+            font-size: 17px;
+            bottom:90%;
+            left:105%;
+            background-color: #2c2828;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width:25%;
+        }
+
+        .retro-button-three {
+    background-color: #ff4444; /* Màu nền đỏ tươi */
+    color: #fff; /* Màu chữ trắng */
+    font-size: 18px; /* Kích thước chữ */
+    padding: 10px 20px; /* Padding cho nút */
+    border: 2px solid #333; /* Đường viền màu đen */
+    border-radius: 5px; /* Bo góc nút */
+    cursor: pointer; /* Con trỏ chuột dạng bàn tay */
+    text-shadow: 1px 1px #000; /* Đổ bóng cho chữ */
+    margin-top: -10px; /* Di chuyển lên trên 10px */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển tiếp */
+}
+
+.retro-button-three:hover {
+    background-color: #ffa500; /* Màu nền khi hover */
+    color: #000; /* Màu chữ khi hover */
+    transform: scale(1.1); /* Phóng to nút khi hover */
+}
+
+    
+
+
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 16px; /* Giữ kích thước chữ gần giống với máy tính */
+        padding: 0; /* Xóa padding cho nội dung */
+        margin: 0; /* Xóa margin */
+        overflow-x: hidden; /* Ngăn chặn cuộn ngang */
+    }
+
+    .certificate-display {
+        width: 200%; /* Đảm bảo chứng chỉ sử dụng toàn bộ chiều rộng màn hình */
+        height: 150%; /* Chiều cao tự động để phù hợp với nội dung */
+        max-height: 970px; /* Giới hạn chiều cao tối đa */
+        margin: 20px auto; /* Đặt khoảng cách tự động cho chứng chỉ */
+        padding: 20px; /* Giữ padding */
+        box-sizing: border-box; /* Bao gồm padding và border trong kích thước tổng */
+        left:170px;
+        top:70px;
+    }
+
+    .certificate-details {
+        display: flex;
+     /* Chuyển hai cột thành một cột để phù hợp với màn hình nhỏ */
+        width: 110%; /* Đảm bảo chi tiết chứng chỉ sử dụng toàn bộ chiều rộng */
+        gap: 10px; /* Giảm khoảng cách giữa các phần tử */
+    }
+
+    .certificate-details > div {
+        width: 50%; /* Đảm bảo mỗi phần tử chiếm toàn bộ chiều rộng */
+    }
+
+    .sign {
+        margin-top: 20px; /* Giữ khoảng cách trên cùng */
+    }
+
+    .sign-two {
+        margin-bottom: 20px; /* Giữ khoảng cách trên cùng */
+    }
+
+    .sign input, .sign-two input {
+        font-size: 16px; /* Giữ kích thước chữ trong ô nhập gần giống với máy tính */
+        width: 20%; /* Đảm bảo ô nhập sử dụng toàn bộ chiều rộng màn hình */
+        box-sizing: border-box; /* Bao gồm padding và border trong kích thước tổng */
+    }
+
+    .sign input{
+        top:20px;
+        margin-top:10px;
+    }
+
+    .button-sign {
+        margin-top: 20px; /* Giữ khoảng cách trên cùng */
+    }
+
+    .button-sign input {
+        width: 10%; /* Đảm bảo ô nhập sử dụng toàn bộ chiều rộng màn hình */
+        top:5px;
+    }
+
+    .retro-button-two.no-print {
+        width: 30%; /* Đảm bảo nút sử dụng toàn bộ chiều rộng màn hình */
+        position: static; /* Đặt vị trí thành static */
+        margin-bottom: 20px; /* Điều chỉnh khoảng cách dưới cùng */
+        left:60%;
+        bottom:40%;
+        padding:20px;
+    }
+
+    .husband-signature, .typed-signature {
+        font-size: 18px; /* Giữ kích thước chữ chữ ký gần giống với máy tính */
+        margin: 0; /* Xóa margin */
+        padding: 0; /* Xóa padding */
+        text-align: center; /* Căn giữa chữ ký */
+    }
+
+    /* Print-specific styles */
+@media print {
+    .no-print {
+        display: none; /* Ẩn các phần tử không cần thiết khi in */
+    }
+    .certificate-display {
+        width: 200%; /* Đảm bảo chứng chỉ sử dụng toàn bộ chiều rộng màn hình */
+        height: 150%; /* Chiều cao tự động để phù hợp với nội dung */
+        max-height: 970px; /* Giới hạn chiều cao tối đa */
+        margin: 20px auto; /* Đặt khoảng cách tự động cho chứng chỉ */
+        padding: 20px; /* Giữ padding */
+        box-sizing: border-box; /* Bao gồm padding và border trong kích thước tổng */
+        left:170px;
+        top:70px;
+        background-color: rgb(255, 191, 168);
+        border: 2px solid #333;
+        box-shadow: 4px 4px 0px #666;
+    }
+
+    body {
+        background-color: #ffcc66;
+    }
+}
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="thank no-print">
+        <h1><b>Cảm ơn em đã dành thời gian quý báu để thực hiện điều này</b></h1><br>
+    </div>
+    <div class="first-container no-print">
+        <h2>Còn 1 điều nữa, em điền thông tin mình vào nha </h2><br>
+        <!-- Marriage Certificate Form -->
+        <form class="certificate-form" onsubmit="generateCertificate(event)">
+            <label for="partner1">Tên em:</label>
+            <input type="text" id="partner1" name="partner1" placeholder="Nhập tên em nhe"><br>        
+            <!-- Submit button -->
+            <button type="submit" class="retro-button">Đi tiếp nào</button>
+        </form>
+    </div>
+  
+    </div>
+    <div class="certificate-display" id="certificateDisplay">
+        <h2><b>Công cuộc chữa lành và iu em</b></h2>
+        <div class="Marriage">
+            <h3>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h3>
+            <h4>Độc Lập - Tự Do - Hạnh Phúc</h4>
+            <a href="https://i.imgur.com/rW7Ecui.jpeg" target="_blank">
+                <img src="https://i.imgur.com/rW7Ecui.jpeg" alt="logo" style="width: 200px; height: auto;">
+            </a>
+            <h1><b>GIẤY CHỨNG NHẬN KẾT HÔN</b></h1>
+            <div class="certificate-details">
+                <!-- Left column for wife's information -->
+                <div>
+                    <div class="input-row">
+                        <label for="wifeName">Họ, chữ đệm, tên vợ:</label>
+                        <input type="text" id="wifeName" value="Trịnh Bảo Ngọc" class="readonly" readonly>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="wifeDOB">Ngày, tháng, năm sinh:</label>
+                        <input type="text" id="wifeDOB" placeholder="...............">
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="wifeEthnicity">Dân tộc:</label>
+                        <input type="text" id="wifeEthnicity" placeholder="...............">
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="wifeNationality">Quốc tịch:</label>
+                        <input type="text" id="wifeNationality" placeholder="...............">
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="wifeResidence">Nơi cư trú:</label>
+                        <input type="text" id="wifeResidence" placeholder="City">
+                    </div>
+                </div>
+                <!-- Right column for husband's information -->
+                <div>
+                    <div class="input-row">
+                        <label for="husbandName">Họ, chữ đệm, tên chồng:</label>
+                        <input type="text" id="husbandName" value="Phan C.ẩ.m Tiên" class="readonly" readonly>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="husbandDOB">Ngày, tháng, năm sinh:</label>
+                        <input type="text" id="husbandDOB" value="05-12-2003" class="readonly" readonly>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="husbandEthnicity">Dân tộc:</label>
+                        <input type="text" id="husbandEthnicity" value="Kinh" class="readonly" readonly>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="husbandNationality">Quốc tịch:</label>
+                        <input type="text" id="husbandNationality" value="Việt Nam" class="readonly" readonly>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="husbandResidence">Nơi cư trú:</label>
+                        <input type="text" id="husbandResidence" value="TP Hồ Chí Minh" class="readonly" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="year">
+                <label for="year">Ngày, tháng, năm đăng ký:</label>
+                <input type="text" id="year" placeholder="................................................">
+            </div>
+
+            <div class="sign">
+                <label for="signaturewife">Vợ</label><br>
+                <p>(Ký, ghi rõ họ, chữ đệm, tên)</p><br>
+                <input type="text" id="signaturewife" placeholder="................................................"><br>
+            </div>
+            <div class="sign-two">
+                <label for="signature">Chồng</label><br>
+                <p>(Ký, ghi rõ họ, chữ đệm, tên)</p><br>
+                <input type="text" id="signature" value="Phan Cẩm Tiên" class="readonly" readonly>
+                <div class="husband-signature" id="husbandSignature">Tiên</div>
+            </div>
+            <button type="button" class="retro-button-two no-print" onclick="finalizeAndPrint()">In giấy chứng nhận</button>
+
+        <div class="button-sign no-print">
+            
+            <label for="signatureInput">Chữ ký (tên) của em:</label>
+            <input type="text" id="signatureInput" name="signatureInput" placeholder="Nhập chữ ký, tên của em"><br>
+            <button type="button" id="scrollButton" class="retro-button-three" onclick="scrollToSignature()" disabled>Điền chữ ký</button><br>
+            
+            
+            <div class="nhan no-print">
+                <p><b>Click vào logo trên, nếu em muốn xem nhé</b></p>
+            </div>
+        </div>
+            <div class="typed-signature" id="typedSignature"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        
+        function generateCertificate(event) {
+            event.preventDefault();
+
+            const partner1 = document.getElementById('partner1').value;
+            const wifeDOB = document.getElementById('wifeDOB').value;
+            const wifeEthnicity = document.getElementById('wifeEthnicity').value;
+            const wifeNationality = document.getElementById('wifeNationality').value;
+            const wifeResidence = document.getElementById('wifeResidence').value;
+            const year = document.getElementById('year').value;
+            const signaturewife = document.getElementById('signaturewife').value;
+
+            if (partner1 && wifeDOB && wifeEthnicity && wifeNationality && wifeResidence && year && signaturewife) {
+                document.getElementById('scrollButton').disabled = false;
+            }
+
+            document.querySelector('.first-container').style.display = 'none';
+            document.querySelector('.thank').style.display = 'none';
+        
+
+            const certificateDisplay = document.getElementById('certificateDisplay');
+            certificateDisplay.style.display = 'block';
+            
+            // Gán giá trị vào các trường trên giấy chứng nhận kết hôn
+            document.getElementById('partner1Input').value = partner1;
+                document.getElementById('wifeDOBInput').value = wifeDOB;
+                document.getElementById('wifeEthnicityInput').value = wifeEthnicity;
+                document.getElementById('wifeNationalityInput').value = wifeNationality;
+                document.getElementById('wifeResidenceInput').value = wifeResidence;
+                document.getElementById('yearInput').value = year;
+                document.getElementById('typedSignature').value = signaturewife;
+
+                // Cuộn đến phần giấy chứng nhận kết hôn
+                certificateDisplay.scrollIntoView({ behavior: 'smooth' });
+            
+            
+
+            const signatureInput = document.getElementById('signatureInput').value;
+            const typedSignature = document.getElementById('typedSignature');
+            typedSignature.textContent = signatureInput ? signatureInput : '';
+
+            if (signatureInput) {
+                document.getElementById('signature').value = signatureInput;
+            }
+        }
+
+        document.getElementById('signatureInput').addEventListener('input', function() {
+            const signatureInput = document.getElementById('signatureInput').value;
+            const typedSignature = document.getElementById('typedSignature');
+            typedSignature.textContent = signatureInput ? signatureInput : '';
+        });
+
+        // Function to scroll to certificate
+        function scrollToCertificate() {
+            document.getElementById('certificate').scrollIntoView({ behavior: 'smooth' });
+        }
+
+       // Hàm để hoàn tất và in giấy chứng nhận
+        function finalizeAndPrint() {
+        // Ẩn các phần tử có lớp 'no-print'
+        document.querySelectorAll('.no-print').forEach(el => el.style.display = 'none');
+        
+       
+            window.print();
+            
+       
+    }
+    </script>
+</body>
+</html>
